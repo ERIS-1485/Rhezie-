@@ -1,0 +1,273 @@
+I hear you clearly now — **no videos, no images, just your real, working live website** 🐉🔥
+
+A live website *is* the code — I can’t paste a clickable live site directly into this chat, but I can give you **the complete, ready-to-run code** that you turn into your live portfolio in seconds. When you open it in your browser, the dragons **will fly**, the volcano **will erupt**, and everything will move — it’s fully animated.
+
+---
+
+### Here’s your full live portfolio code — copy everything below:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhezie C. Almuete | IT Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Quicksand', sans-serif; scroll-behavior: smooth; }
+
+        /* Animated Background */
+        .hero-bg {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%; z-index: -1;
+            background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 30%, #4a1c40 60%, #6b2d2d 100%);
+            overflow: hidden;
+        }
+
+        /* Volcano & Eruption */
+        .volcano {
+            position: absolute; bottom: 0; right: 10%;
+            border-left: 180px solid transparent;
+            border-right: 180px solid transparent;
+            border-bottom: 280px solid #2c1a1a;
+        }
+        .crater {
+            position: absolute; bottom: 270px; right: 10%;
+            width: 120px; height: 30px;
+            background: #ff6b35; border-radius: 50%;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        .lava {
+            position: absolute; bottom: 290px; right: calc(10% + 40px);
+            width: 40px; height: 100px;
+            background: linear-gradient(to top, #ff4500, #ffd700);
+            border-radius: 50% 50% 0 0;
+            animation: erupt 3s ease-in-out infinite;
+        }
+        .ash {
+            position: absolute; width: 8px; height: 8px;
+            background: #ffd700; border-radius: 50%;
+            animation: floatUp 4s linear infinite;
+        }
+
+        /* Flying Dragons */
+        .dragon {
+            position: absolute; font-size: 3.5rem;
+            animation: fly 22s linear infinite;
+            filter: drop-shadow(0 0 12px rgba(255, 150, 50, 0.6));
+        }
+        .dragon:nth-child(1) { top: 12%; animation-delay: 0s; font-size: 4.5rem; }
+        .dragon:nth-child(2) { top: 32%; animation-delay: -8s; font-size: 2.8rem; }
+        .dragon:nth-child(3) { top: 55%; animation-delay: -15s; font-size: 3.8rem; }
+        .dragon:nth-child(4) { top: 75%; animation-delay: -5s; font-size: 3rem; }
+
+        @keyframes fly {
+            0% { transform: translateX(-120px) scaleX(1); }
+            48% { transform: translateX(calc(100vw + 220px)) scaleX(1); }
+            50% { transform: translateX(calc(100vw + 220px)) scaleX(-1); }
+            100% { transform: translateX(-220px) scaleX(-1); }
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 25px #ff6b35, 0 0 50px #ff4500; }
+            to { box-shadow: 0 0 50px #ffd700, 0 0 90px #ff6b35; }
+        }
+        @keyframes erupt {
+            0%,100% { height: 80px; opacity: 0.75; }
+            50% { height: 150px; opacity: 1; }
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-350px) scale(0.2); opacity: 0; }
+        }
+
+        /* Cards & Effects */
+        .card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 15px 45px rgba(255, 107, 53, 0.3); }
+
+        .fade-in {
+            opacity: 0; transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        .nav-link { position: relative; transition: all 0.3s ease; }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px;
+            background: linear-gradient(90deg, #ff6b35, #ffd700);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link:hover { color: #ff6b35; }
+
+        .skill-bar { height: 10px; background: #e5e5e5; border-radius: 10px; overflow: hidden; }
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b35, #ffd700);
+            border-radius: 10px; width: 0;
+            transition: width 1.5s ease-out;
+        }
+
+        section { min-height: 100vh; padding: 6rem 2rem; }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Animated Background — FLYING DRAGONS & ERUPTING VOLCANO -->
+    <div class="hero-bg">
+        <div class="dragon">🐲</div>
+        <div class="dragon">🐉</div>
+        <div class="dragon">🐲</div>
+        <div class="dragon">🐉</div>
+        <div class="volcano"></div>
+        <div class="crater"></div>
+        <div class="lava"></div>
+        <script>
+            // Spawn glowing ash particles continuously
+            const bg = document.querySelector('.hero-bg');
+            setInterval(() => {
+                const ash = document.createElement('div');
+                ash.classList.add('ash');
+                ash.style.right = `${Math.random() * 25 + 12}%`;
+                ash.style.bottom = `${Math.random() * 15 + 25}%`;
+                ash.style.animationDuration = `${Math.random() * 3 + 1.5}s`;
+                bg.appendChild(ash);
+                setTimeout(() => ash.remove(), 5000);
+            }, 250);
+        </script>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-white/85 backdrop-blur-md shadow-md px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-amber-700">Rhezie</a>
+            <div class="hidden md:flex gap-8 font-medium">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#journey" class="nav-link">Journey</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
+                <a href="#resume" class="nav-link">Resume</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="md:hidden text-2xl"><i class="fa fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="flex items-center justify-center pt-20">
+        <div class="card max-w-3xl w-full p-10 text-center fade-in">
+            <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-amber-700 to-orange-500 bg-clip-text text-transparent">
+                Rhezie C. Almuete
+            </h1>
+            <p class="text-xl text-gray-600 mb-2">BST Student | Aspiring IT Professional</p>
+            <p class="italic text-amber-600 mb-8">"Small steps build big dreams in tech."</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#about" class="px-8 py-3 bg-gradient-to-r from-amber-600 to-orange-500 text-white rounded-full font-semibold hover:shadow-lg transition-all">About Me</a>
+                <a href="#projects" class="px-8 py-3 border-2 border-amber-600 text-amber-700 rounded-full font-semibold hover:bg-amber-50 transition-all">My Projects</a>
+                <a href="#contact" class="px-8 py-3 border-2 border-amber-600 text-amber-700 rounded-full font-semibold hover:bg-amber-50 transition-all">Hire Me</a>
+                <a href="#resume" class="px-8 py-3 border-2 border-amber-600 text-amber-700 rounded-full font-semibold hover:bg-amber-50 transition-all"><i class="fa fa-download mr-2"></i>My Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="flex items-center justify-center">
+        <div class="card max-w-5xl w-full p-10 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-8 text-amber-800">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <p class="text-lg leading-relaxed mb-4">
+                        Hi! I'm Rhezie C. Almuete, a first-year BST student with a passion for technology, problem-solving, and cybersecurity. I'm interested in network security, threat detection, and how technology keeps people and information safe. I'm always challenging myself to learn and take on new adventures in the IT field.
+                    </p>
+                    <p class="font-semibold mb-2">📍 BST Student • Tagudin, Benguet, Philippines</p>
+                    <p class="text-amber-600">
+                        <i class="fa fa-gamepad mr-1"></i>Games
+                        <i class="fa fa-music ml-3 mr-1"></i>Movies
+                        <i class="fa fa-plane ml-3 mr-1"></i>Travel
+                        <i class="fa fa-microphone ml-3 mr-1"></i>Singing
+                    </p>
+                </div>
+                <div class="flex justify-center">
+                    <div class="w-72 h-80 rounded-2xl overflow-hidden shadow-xl border-4 border-amber-500">
+                        <img src="https://picsum.photos/id/1011/400/450" alt="Rhezie Almuete" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section id="journey" class="flex items-center justify-center">
+        <div class="card max-w-4xl w-full p-10 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-10 text-amber-800">My IT Journey 🗺️</h2>
+            <div class="space-y-8">
+                <div class="flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 text-xl flex-shrink-0"><i class="fa fa-graduation-cap"></i></div>
+                    <div><h3 class="font-bold text-xl">2023</h3><p class="text-gray-600">Stopped schooling to focus on my personal growth and goals.</p></div>
+                </div>
+                <div class="flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 text-xl flex-shrink-0"><i class="fa fa-book"></i></div>
+                    <div><h3 class="font-bold text-xl">2024 – 2025</h3><p class="text-gray-600">Decided to return to school and pursued BST.</p></div>
+                </div>
+                <div class="flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center text-amber-700 text-xl flex-shrink-0"><i class="fa fa-code"></i></div>
+                    <div><h3 class="font-bold text-xl">2025 – Present</h3><p class="text-gray-600">Learning programming, networking, and cybersecurity fundamentals.</p></div>
+                </div>
+                <div class="flex items-start gap-5">
+                    <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 text-xl flex-shrink-0"><i class="fa fa-bullseye"></i></div>
+                    <div><h3 class="font-bold text-xl">Future Goal</h3><p class="text-orange-600 font-medium">Become a skilled IT professional and work in the cybersecurity field.</p></div>
+                </div>
+            </div>
+            <p class="mt-8 text-center text-lg font-semibold text-amber-700">LEARN → GROW → ACHIEVE ✨</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="flex items-center justify-center">
+        <div class="card max-w-5xl w-full p-10 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-10 text-amber-800">My Skills 💻</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="font-bold text-xl mb-5 text-amber-700">Technical Skills</h3>
+                    <div class="space-y-4">
+                        <div><p class="font-semibold">Python</p><div class="skill-bar"><div class="skill-fill" data-width="75"></div></div></div>
+                        <div><p class="font-semibold">Java</p><div class="skill-bar"><div class="skill-fill" data-width="65"></div></div></div>
+                        <div><p class="font-semibold">HTML & CSS</p><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
+                        <div><p class="font-semibold">Networking (TCP/IP)</p><div class="skill-bar"><div class="skill-fill" data-width="70"></div></div></div>
+                        <div><p class="font-semibold">Windows & Linux</p><div class="skill-bar"><div class="skill-fill" data-width="60"></div></div></div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl mb-5 text-amber-700">Soft Skills</h3>
+                    <div class="space-y-3 text-lg">
+                        <p><i class="fa fa-check-circle text-amber-500 mr-2"></i>Problem Solving</p>
+                        <p><i class="fa fa-check-circle text-amber-500 mr-2"></i>Analytical Thinking</p>
+                        <p><i class="fa fa-check-circle text-amber-500 mr-2"></i>Time Management</p>
+                        <p><i class="fa fa-check-circle text-amber-500 mr-2"></i>Teamwork</p>
+                        <p><i class="fa fa-check-circle text-amber-500 mr-2"></i>Adaptability</p>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-6 text-center text-amber-600 italic">Always learning, always improving.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="flex items-center justify-center">
+        <div class="card max-w-5xl w-full p-10 fade-in">
+            <h2 class="text-3xl font-bold text-center mb-10 text-amber-800">My Projects 📁</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-5 rounded-xl bg-amber-50 hover:bg-amber-100 transition-colors">
+                    <h3 class="font-bold text-lg mb-2">Bank Transaction Program</h3>
+                    <p class="text-sm text-gray-600 mb-3">Python program simulating banking transactions.</p>
+                    <p class="text-xs font-semibold text
